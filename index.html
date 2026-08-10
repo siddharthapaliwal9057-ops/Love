@@ -212,11 +212,12 @@
       margin-bottom: 1.2rem;
     }
 
-    /* Video Styling */
+    /* Video Styling (No Black Frames) */
     .celebration-video {
-      width: 100%;
-      max-width: 320px;
-      border-radius: 15px;
+      width: 280px;
+      height: 280px;
+      object-fit: cover;
+      border-radius: 20px;
       box-shadow: 0 8px 20px rgba(139, 0, 50, 0.25);
       outline: none;
     }
@@ -271,7 +272,7 @@
     <div class="spinning-emoji">💖</div>
     <p class="final-message">I knew you'd say yes...</p>
     
-    <!-- GitHub same folder video source -->
+    <!-- Video Element -->
     <video class="celebration-video" autoplay loop muted playsinline controls>
       <source src="video.mp4" type="video/mp4">
       Your browser does not support the video tag.
@@ -390,7 +391,6 @@
       const celebration = document.getElementById('celebration');
       celebration.style.display = 'flex';
 
-      // Automatically play video when Yes is clicked
       const video = celebration.querySelector('video');
       if (video) {
         video.play().catch(e => console.log('Autoplay blocked:', e));
